@@ -2,6 +2,8 @@ import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
 import type { LinksFunction } from "react-router";
 
 import "./app.css";
+import { GoogleOAuthProvider } from "@react-oauth/google";
+import config from "./utilies/config";
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -26,7 +28,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        <div className="flex h-screen items-center justify-center bg-slate-400">
+          {children}
+        </div>
         <ScrollRestoration />
         <Scripts />
       </body>
@@ -35,5 +39,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <GoogleOAuthProvider clientId={config.googleClientId}>
+      <Outlet />
+    </GoogleOAuthProvider>
+  );
 }
