@@ -4,11 +4,6 @@ import WelcomePng from "./assets/welcome.png";
 import useGoogleApis from "~/utilies/hooks/useGoogleApis";
 import { useNavigate } from "react-router";
 
-const DISCOVERY_DOC =
-  "https://www.googleapis.com/discovery/v1/apis/tasks/v1/rest";
-
-const API_KEY = "AIzaSyCZQcgFWLBxhwHy3VQFjl-PuCd6rKxgGYI";
-
 export default function index() {
   let navigate = useNavigate();
   const { accessToken, login } = useGoogleApis();
