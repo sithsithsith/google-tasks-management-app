@@ -1,4 +1,5 @@
 import { googleLogout, useGoogleLogin } from "@react-oauth/google";
+import axios, { AxiosInstance } from "axios";
 import { useEffect, useState } from "react";
 
 export type GoogleApis = {
@@ -8,18 +9,17 @@ export type GoogleApis = {
 };
 
 export default function useGoogleApis(): GoogleApis {
-  const [accessToken, setAccessToken] = useState<string>(() => {
-    if (typeof window !== undefined) {
-      const localToken = localStorage.getItem("access_token") || "";
-      return localToken;
-    }
-    return "";
-  });
   const login = useGoogleLogin({
     onSuccess: (tokenResponse) => setAccessToken(tokenResponse.access_token),
     scope: "https://www.googleapis.com/auth/tasks",
   });
   const logout = googleLogout;
+
+  const [axiosClient, setAxiosClient] = useState<AxiosInstance>(axios.create());
+
+  const [accessToken, setAccessToken] = useState<string>(
+    () => localStorage.getItem("access_token") || ""
+  );
 
   useEffect(() => {
     if (typeof window !== undefined) {

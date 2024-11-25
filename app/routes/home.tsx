@@ -1,5 +1,4 @@
-import { redirect, type MetaFunction } from "react-router";
-import { TasksList } from "~/pages/tasks";
+import { Outlet, redirect, type MetaFunction } from "react-router";
 import { Route } from "./+types/home";
 
 export const meta: MetaFunction = () => {
@@ -19,5 +18,5 @@ export async function clientLoader({}: Route.ClientLoaderArgs) {
 }
 
 export default function HomePage() {
-  return <TasksList />;
+  return <Outlet />;
 }

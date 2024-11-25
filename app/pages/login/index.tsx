@@ -9,7 +9,7 @@ const DISCOVERY_DOC =
 
 const API_KEY = "AIzaSyCZQcgFWLBxhwHy3VQFjl-PuCd6rKxgGYI";
 
-export function Login() {
+export default function index() {
   let navigate = useNavigate();
   const { accessToken, login } = useGoogleApis();
   useEffect(() => {

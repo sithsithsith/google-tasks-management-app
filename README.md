@@ -1,1 +1,1 @@
-# React Todo list powered by google apis!
+# Todo list webapp powered by react and googleapis!
