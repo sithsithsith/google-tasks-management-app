@@ -1,5 +1,5 @@
 import { GoogleTasksResponse } from "~/ts/google";
-import { getGoogleTasksList } from "~/shared/api/google-tasks";
+import { getGoogleTasksList } from "~/shared/api/google";
 import { QueryClient, QueryFunctionContext } from "@tanstack/react-query";
 
 export const queryClient = new QueryClient();

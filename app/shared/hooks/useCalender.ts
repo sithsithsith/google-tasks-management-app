@@ -1,11 +1,5 @@
 import { useMemo } from "react";
-
-export type WeekDay = {
-  name: string;
-  date: string;
-  active: boolean;
-  blur: boolean;
-};
+import { WeekDay } from "~/ts/core";
 
 export default function useCalender() {
   const getWeekDays = (): WeekDay[] => {

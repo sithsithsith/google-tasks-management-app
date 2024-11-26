@@ -1,7 +1,5 @@
-import { default as AppConfig } from "../config";
+import { default as AppConfig } from "~/shared/config";
 import axios, { AxiosInstance } from "axios";
-
-export type AxiosRequestParams = Record<string, string>;
 
 export function createGoogleTasksClient(): AxiosInstance {
   let axiosClient = axios.create({

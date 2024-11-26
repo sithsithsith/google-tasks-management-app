@@ -32,5 +32,5 @@ export default function ObserverSentinel({
       }
     };
   }, onIntersectDeps());
-  return <div className="sentinel_component">{component};</div>;
+  return <div className="sentinel_component">{component}</div>;
 }
