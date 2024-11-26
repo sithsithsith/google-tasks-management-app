@@ -1,6 +1,5 @@
 import { Route } from "./+types/auth";
-import { redirect, type MetaFunction } from "react-router";
-import Login from "~/pages/login";
+import { Outlet, redirect, type MetaFunction } from "react-router";
 
 export const meta: MetaFunction = () => {
   return [
@@ -19,5 +18,5 @@ export async function clientLoader({}: Route.ClientLoaderArgs) {
 }
 
 export default function Auth() {
-  return <Login />;
+  return <Outlet />;
 }
