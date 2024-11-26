@@ -7,6 +7,15 @@
 - **Google authentication:** Direct login with google accounts.
 - **Task Management:** List, Add, Edit or Delete tasks using google tasks api.
 
+### NOTICE !! 11/27/24
+
+Features stated below are still work in progress
+
+- **add tasks**
+- **create tasks**
+- **edit tasks**
+- **delete tasks**
+
 ## 📦 Local Setup Instructions
 
 Follow these steps to get started with Task Mangement App on your local machine:
