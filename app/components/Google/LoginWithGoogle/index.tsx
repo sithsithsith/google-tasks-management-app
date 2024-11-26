@@ -1,8 +1,7 @@
+import config from "~/shared/config";
+import useGoogleAuth from "~/shared/hooks/useGoogleAuth";
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
-import GoogleLogo from "assets/google.png";
-import WelcomePng from "assets/welcome.png";
-import useGoogleAuth from "~/shared/hooks/useGoogleAuth";
 
 export default function LoginWithGoogle() {
   const { accessToken, login } = useGoogleAuth();
@@ -18,7 +17,7 @@ export default function LoginWithGoogle() {
         <div className="flex items-center gap-1">
           <h1 className="text-2xl font-bold">Hi, Welcome Back!</h1>
           <img
-            src={WelcomePng}
+            src={config.assets.welcome}
             alt="hello, welcome back"
             className="w-6 h-6 block dark:hidden"
           />
@@ -31,7 +30,7 @@ export default function LoginWithGoogle() {
         >
           <div className="flex w-1/4 pl-3 justify-start items-center">
             <img
-              src={GoogleLogo}
+              src={config.assets.google}
               alt="Sign-in with Google"
               className="w-7 h-7 block dark:hidden"
             />

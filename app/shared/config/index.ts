@@ -1,3 +1,10 @@
+import burger from "assets/burger.svg";
+import caretDown from "assets/caret-down.svg";
+import filter from "assets/filter.svg";
+import google from "assets/google.png";
+import search from "assets/search.svg";
+import welcome from "assets/welcome.png";
+
 export default {
   applicationUrl:
     import.meta.env.VITE_APPLICATION_URL || "http://localhost:3000",
@@ -6,6 +13,20 @@ export default {
   googleTaskServiceEndpoint:
     import.meta.env.VITE_GOOGLE_TASK_SERVICE_ENDPOINT || "",
   googleOauth2Scopes: import.meta.env.VITE_GOOGLE_CLIENT_OAUTH2_SCOPES || "",
+
+  assets: {
+    google,
+    welcome,
+    burger,
+    caretDown,
+    filter,
+    search,
+  },
+
+  colorIndications: {
+    pending: "#D2D6DB",
+    done: "#039855",
+  },
 };
 
 export const mandatory = [

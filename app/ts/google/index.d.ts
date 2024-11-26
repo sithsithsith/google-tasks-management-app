@@ -3,12 +3,14 @@ export type GoogleTasksRequestParameters = {
   pageToken?: string;
 };
 
+export type GoogleTaskStatus = "needsAction" | "completed";
+
 export type GoogleTasksItemResponse = {
   id: string;
   title: string;
   notes: string;
   due: string;
-  status: string;
+  status: GoogleTaskStatus;
 };
 
 export type GoogleTasksResponse = {
@@ -32,11 +34,36 @@ export type GoogleAuthHook = {
   accessToken: string;
 };
 
-export type GoogleTasksListListProps<W, C> = {
+export type GoogleFooterProps = {
+  title: string;
+  textColor?: "text-blue-600" | "text-red-600";
+  whenClick?: () => void;
+};
+
+export type GoogleTasksListProps<W, C> = {
   data: W | undefined;
   noDataComponent?: C;
 };
 
 export type GoogleTasksListItemProps = {
   tasklist: GoogleTasksResponse;
+};
+
+export type GoogleTaskItemCardProps = {
+  task: GoogleTasksItemResponse;
+};
+
+export type GoogleTaskItemActionProps = {
+  status: GoogleTaskStatus;
+};
+
+export type GoogleTaskItemInfoProps = {
+  status: GoogleTaskStatus;
+  title: string;
+  notes: string;
+};
+
+export type GoogleTasksModalContextType = {
+  openGoogleTasksModal: (content: ReactNode) => void;
+  closeGoogleTasksModal: () => void;
 };

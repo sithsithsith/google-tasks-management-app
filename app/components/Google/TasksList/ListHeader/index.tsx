@@ -1,11 +1,7 @@
-import Burger from "assets/burger.svg";
-import CaretDown from "assets/caret-down.svg";
-import Filter from "assets/filter.svg";
-import Search from "assets/search.svg";
-
+import config from "~/shared/config";
 import useCalender from "~/shared/hooks/useCalender";
 
-export default function Header() {
+export default function ListHeader() {
   const { getWeekDays } = useCalender();
   const weekDays = getWeekDays();
   return (
@@ -13,21 +9,21 @@ export default function Header() {
       <ul className="w-full h-full flex justify-between items-center">
         <li className="h-full flex items-center">
           <button>
-            <img src={Burger} alt="Burger" />
+            <img src={config.assets.burger} alt="Burger" />
           </button>
         </li>
         <li className="h-full flex items-center gap-1">
           <p className="text-xl font-bold text-center">Today</p>
           <button>
-            <img src={CaretDown} alt="CaretDown" />
+            <img src={config.assets.caretDown} alt="CaretDown" />
           </button>
         </li>
         <li className="h-full flex items-center gap-5">
           <button>
-            <img src={Filter} alt="Filter" />
+            <img src={config.assets.filter} alt="Filter" />
           </button>
           <button>
-            <img src={Search} alt="Search" />
+            <img src={config.assets.search} alt="Search" />
           </button>
         </li>
       </ul>
