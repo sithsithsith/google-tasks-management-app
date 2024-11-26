@@ -8,6 +8,7 @@ import welcome from "assets/welcome.png";
 export default {
   applicationUrl:
     import.meta.env.VITE_APPLICATION_URL || "http://localhost:3000",
+  applicationStage: import.meta.env.VITE_APPLICATION_STAGE || "production",
   googleClientId: import.meta.env.VITE_GOOGLE_CLIENT_ID || "",
   googleTaskApiKey: import.meta.env.VITE_GOOGLE_TASKS_API_KEY || "",
   googleTaskServiceEndpoint:
