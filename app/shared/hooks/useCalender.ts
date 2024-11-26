@@ -2,6 +2,23 @@ import { useMemo } from "react";
 import { WeekDay } from "~/ts/core";
 
 export default function useCalender() {
+  const getTodayDateAndTime = (): { date: string; time: string } => {
+    const now = new Date();
+    const optionsDate: Intl.DateTimeFormatOptions = {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    };
+    const date: string = now.toLocaleDateString("en-US", optionsDate);
+    const optionsTime: Intl.DateTimeFormatOptions = {
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true,
+    };
+    const time: string = now.toLocaleTimeString("en-US", optionsTime);
+    return { date, time };
+  };
+
   const getWeekDays = (): WeekDay[] => {
     const days = useMemo(() => {
       const today = new Date();
@@ -29,5 +46,6 @@ export default function useCalender() {
 
   return {
     getWeekDays,
+    getTodayDateAndTime,
   };
 }

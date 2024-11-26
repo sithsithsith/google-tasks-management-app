@@ -6,6 +6,7 @@ interface ImportMetaEnv {
   readonly VITE_GOOGLE_TASK_SERVICE_ENDPOINT: string;
   readonly VITE_GOOGLE_CLIENT_OAUTH2_SCOPES: string;
   readonly VITE_APPLICATION_URL: string;
+  readonly VITE_APPLICATION_STAGE: string;
 }
 
 interface ImportMeta {
