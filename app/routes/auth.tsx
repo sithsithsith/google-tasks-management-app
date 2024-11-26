@@ -1,4 +1,4 @@
-import { Route } from "./+types/login";
+import { Route } from "./+types/auth";
 import { redirect, type MetaFunction } from "react-router";
 import Login from "~/pages/login";
 

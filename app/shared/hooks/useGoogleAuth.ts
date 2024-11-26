@@ -1,16 +1,7 @@
+import config from "~/shared/config";
 import { useEffect, useState } from "react";
+import { GoogleAuthHook } from "~/ts/google";
 import { googleLogout, useGoogleLogin } from "@react-oauth/google";
-
-export type GoogleAuthHook = {
-  login: () => void;
-  logout: () => void;
-  accessToken: string;
-};
-
-export type GoogleTaskRequestParams = {
-  maxResults: string;
-  pageToken: string;
-};
 
 export default function useGoogleAuth(): GoogleAuthHook {
   const [accessToken, setAccessToken] = useState<string>(
@@ -24,7 +15,7 @@ export default function useGoogleAuth(): GoogleAuthHook {
 
   const login = useGoogleLogin({
     onSuccess: (tokenResponse) => setAccessToken(tokenResponse.access_token),
-    scope: "https://www.googleapis.com/auth/tasks",
+    scope: config.googleOauth2Scopes,
   });
   const logout = googleLogout;
 

@@ -1,4 +1,4 @@
-import { queryClient } from "~/shared/clients/tanstack";
+import { queryClient } from "~/shared/clients/react-query";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
