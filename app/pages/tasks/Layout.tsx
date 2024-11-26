@@ -1,13 +1,11 @@
 import { Outlet } from "react-router";
-import Footer from "~/components/tasks/Footer/Footer";
-import CalendarNav from "~/components/tasks/Header/CalendarNav";
-import Nav from "~/components/tasks/Header/Nav";
+import Footer from "~/components/TodoApp/Footer";
+import Header from "~/components/TodoApp/Header";
 
 export default function Layout() {
   return (
-    <div className="relative w-full h-full sm:w-11/12 sm:h-5/6 flex flex-col items-center bg-white">
-      <Nav />
-      <CalendarNav />
+    <div className="w-full h-full sm:w-11/12 sm:h-5/6 sm:rounded-xl relative flex flex-col items-center bg-white">
+      <Header />
       <Outlet />
       <Footer />
     </div>

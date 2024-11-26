@@ -1,20 +1,19 @@
 import { useEffect } from "react";
 import GoogleLogo from "./assets/google.png";
 import WelcomePng from "./assets/welcome.png";
-import useGoogleApis from "~/utilies/hooks/useGoogleApis";
+import useGoogleApis from "~/shared/hooks/useGoogleAuth";
 import { useNavigate } from "react-router";
 
 export default function index() {
-  let navigate = useNavigate();
   const { accessToken, login } = useGoogleApis();
+
+  let navigate = useNavigate();
   useEffect(() => {
-    if (Boolean(accessToken !== "")) {
-      navigate("/");
-    }
+    Boolean(accessToken !== "") && navigate("/");
   }, [accessToken]);
 
   return (
-    <div className="w-11/12 h-5/6 flex flex-col items-center justify-between bg-white">
+    <div className="w-full h-full sm:w-11/12 sm:h-5/6 sm:rounded-xl flex flex-col items-center justify-between bg-white">
       <header className="flex h-3/5 w-full justify-center items-center ">
         <div className="flex items-center gap-1">
           <h1 className="text-2xl font-bold">Hi, Welcome Back!</h1>

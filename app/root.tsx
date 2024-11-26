@@ -1,9 +1,10 @@
+import { queryClient } from "~/shared/clients/tanstack";
+import { GoogleOAuthProvider } from "@react-oauth/google";
+import { QueryClientProvider } from "@tanstack/react-query";
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
 import type { LinksFunction } from "react-router";
-
 import "./app.css";
-import { GoogleOAuthProvider } from "@react-oauth/google";
-import config from "./utilies/config";
+import config from "~/shared/config";
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -28,7 +29,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <div className="flex h-screen items-center justify-center bg-slate-400">
+        <div className="flex h-screen items-center justify-center bg-black">
           {children}
         </div>
         <ScrollRestoration />
@@ -41,7 +42,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export default function App() {
   return (
     <GoogleOAuthProvider clientId={config.googleClientId}>
-      <Outlet />
+      <QueryClientProvider client={queryClient}>
+        <Outlet />
+      </QueryClientProvider>
     </GoogleOAuthProvider>
   );
 }
