@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import GoogleLogo from "./assets/google.png";
-import WelcomePng from "./assets/welcome.png";
+import GoogleLogo from "assets/google.png";
+import WelcomePng from "assets/welcome.png";
 import useGoogleApis from "~/shared/hooks/useGoogleAuth";
 import { useNavigate } from "react-router";
 

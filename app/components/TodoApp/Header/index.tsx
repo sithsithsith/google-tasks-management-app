@@ -1,7 +1,7 @@
-import Burger from "~/components/GoogleTasks/Header/assets/burger.svg";
-import CaretDown from "~/components/GoogleTasks/Header/assets/caret-down.svg";
-import Filter from "~/components/GoogleTasks/Header/assets/filter.svg";
-import Search from "~/components/GoogleTasks/Header/assets/search.svg";
+import Burger from "assets/burger.svg";
+import CaretDown from "assets/caret-down.svg";
+import Filter from "assets/filter.svg";
+import Search from "assets/search.svg";
 
 import useCalender from "~/shared/hooks/useCalender";
 
